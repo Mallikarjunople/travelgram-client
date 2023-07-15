@@ -24,6 +24,17 @@ function Role() {
         setLoading(false);
       })
       .catch((err) => console.log(err));
+
+      return () => {
+        setLoading(false); // This worked for me
+        setUser({
+          name: "",
+          email: "",
+          phone: "",
+          blogs: [],
+          role: "",
+        })
+      };
   }, []);
   return (
     <>
@@ -43,11 +54,10 @@ function Role() {
             width={"15%"}
           />
         </div>
-      ) : user.role == "admin" ? (
-        <Route to="adminpage" exact component={AdminPage} />
-      ) : (
-        <Route to="userprofile" exact component={UserProfile} />
-      )}
+      )
+      : user.role == "admin"
+      ? (<><Route to="adminpage" exact component={AdminPage}/> </>) 
+      : (<><Route to="userprofile" exact component={UserProfile}/> </>)}
     </>
   );
 }

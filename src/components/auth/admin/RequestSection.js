@@ -15,7 +15,12 @@ function RequestSection() {
         setBlogRequests(res.data.blogs);
       })
       .catch((err) => console.log(err));
+
+      return () => {
+        setBlogRequests([]); // This worked for me
+      };
   }, []);
+
   return (
     <>
       <h2 className="mt-4 ml-5">Blog requests</h2>

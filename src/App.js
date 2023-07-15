@@ -32,6 +32,10 @@ import Feed from "./components/auth/admin/Feed";
 import ViewFeedback from "./components/auth/admin/ViewFeedback";
 
 export const baseUrl = "https://travelgram-server.onrender.com/";
+
+// Uncomment to Use for Development
+// export const baseUrl = "http://localhost:5000/";
+
 const token = localStorage.getItem("token");
 export const authUser = axios.create({
   baseURL: "https://travelgram-server.onrender.com/",
@@ -43,6 +47,8 @@ export const authUser = axios.create({
 function App() {
   axios.defaults.baseURL = "https://travelgram-server.onrender.com/";
 
+  // Uncomment to Use for Development
+  // axios.defaults.baseURL = "http://localhost:5000/";
   return (
     <>
       <Router>

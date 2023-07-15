@@ -34,7 +34,7 @@ const UserSignup = () => {
         })
         .then((response) => {
           // console.log(response.data);
-          alert("sign Up successfully");
+          alert("Signed up successfully !!");
           if (response.status === 201) window.location = "/userlogin"; //add the location for stats 200
         })
         .catch((error) => {

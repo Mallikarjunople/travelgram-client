@@ -31,7 +31,6 @@ const UserLogin = () => {
 
   const onSubmit = (user) => {
     // e.preventDefault();
-    console.log(user); // sent object
     axios
       .post("/auth/login", {
         email: user.email,

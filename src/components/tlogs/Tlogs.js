@@ -13,8 +13,8 @@ export default function Tlogs() {
     authUser
       .get("/blogs") //NEED CHANGES
       .then((res) => {
+        console.log("DATA:" ,res.data)
         setData(res.data.blogs);
-        // console.log(res.data.blogs)
       })
       .catch((err) => console.log(err));
   }, []);
